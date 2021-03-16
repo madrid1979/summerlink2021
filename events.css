@@ -1,0 +1,54 @@
+.eventblock {
+  display: flex;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.eventblock:hover {
+  background-color: #eee;
+}
+
+.eventblock a {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.eventblock .eventImg {
+  max-width: 30%;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.eventblock .eventInfo {
+  max-width: 60%;
+  padding: 6px;
+}
+
+.eventblock .eventInfo h3 {
+  margin: 10px 0 10px;
+  color: #f37163;
+  font-size: 30px;
+}
+
+.eventblock .eventInfo h5 {
+  margin: 0 0 20px;
+  color: #3e3e3e;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .eventblock {
+    flex-direction: column;
+  }
+  .eventblock .eventImg {
+    margin-bottom: 10px;
+  }
+  .eventblock .eventImg,
+  .eventblock .eventInfo {
+    max-width: 100%;
+  }
+}
