@@ -41,7 +41,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="eventblock">
       <a class="eventlink" href="<?php echo get_the_permalink(); ?>"></a>
       <div class="eventImg">
-        <img src="<?php echo wp_get_attachment_image_url(get_post_thumbnail_id(), 'large' ); ?>">        
+        <?php 
+          $event_image_id = get_post_thumbnail_id();
+          if ($event_image_id) {
+        ?>
+          <img src="<?php echo wp_get_attachment_image_url($event_image_id, 'large' ); ?>" alt="<?php echo get_the_title(); ?>">
+        <?php } else { ?>
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/event_placeholder.jpg" alt="New Event">
+        <?php } ?>
       </div>
       <div class="eventInfo">
         <h3><?php the_title(); ?></h3>
