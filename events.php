@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <h3><?php the_title(); ?></h3>
         <h5><?php echo get_field('event_date');?></h5>
         <?php 
-          if( empty( the_excerpt() ) ){
+          if( empty( get_the_excerpt() ) ){
             $raw_content = wp_strip_all_tags(get_the_content());
             $pattern = get_shortcode_regex();
             $clean_content = preg_replace_callback( "/$pattern/s", 'fusion_extract_shortcode_contents', $raw_content);
