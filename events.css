@@ -40,6 +40,10 @@
   font-size: 18px;
 }
 
+.eventblock .eventInfo p:last-child {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .eventblock {
     flex-direction: column;
