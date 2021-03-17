@@ -69,6 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             echo apply_filters('the_content', $clean_content);
           } else {
             the_excerpt();
+            echo "<p><strong>[CLICK FOR DETAILS]</strong></p>";
           }
         ?>
       </div>
