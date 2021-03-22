@@ -1,13 +1,18 @@
+.event_listings {
+  padding: 30px 0;
+}
+
 .eventblock {
   display: flex;
   border-radius: 8px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
+  box-shadow: 0px 3px 4px rgb(0 0 0 / 10%);
 }
 
 .eventblock:hover {
-  background-color: #eee;
+  background-color: rgb(243, 243, 243);
 }
 
 .eventblock a {
@@ -24,7 +29,7 @@
 }
 
 .eventblock .eventInfo {
-  max-width: 60%;
+  max-width: 68%;
   padding: 6px;
 }
 

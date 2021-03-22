@@ -32,7 +32,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	<?php endwhile; wp_reset_postdata(); ?>
 
+  <div class="event_listings">
   <?php 
+    ### START EVENT BLOCKS ###
     $eventsArgs = array('post_type' => 'event');
     $eventsQuery = new WP_Query($eventsArgs);
     
@@ -63,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             $excerpt_length = (int) _x( '55', 'excerpt_length' );
             $excerpt_length = (int) apply_filters( 'excerpt_length', $excerpt_length );
 
-            $excerpt_more = apply_filters( 'excerpt_more', '&hellip; ' . '<strong>[CLICK FOR DETAILS]</strong>' );
+            $excerpt_more = apply_filters( 'excerpt_more', '&hellip; ' . '<p><strong>[CLICK FOR DETAILS]</strong></p>' );
             
             $clean_content = wp_trim_words($clean_content, $excerpt_length, $excerpt_more);
             echo apply_filters('the_content', $clean_content);
@@ -76,6 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     </div>
 
   <?php endwhile; ?>
+  </div>
 
 </section>
 <?php get_footer(); ?>
