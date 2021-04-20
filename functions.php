@@ -15,3 +15,8 @@ function avada_lang_setup() {
 	load_child_theme_textdomain( 'Avada', $lang );
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
+
+function flush_rewrites($post_ID, $post, $update){
+  flush_rewrite_rules();
+}
+add_action('save_post', 'flush_rewrites', 999, 3);
