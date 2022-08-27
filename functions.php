@@ -1,6 +1,6 @@
 <?php
 
-define('VERSION', '1.0.'.date('Ymd'));
+define('VERSION', '1.1.'.date('Ymd'));
 
 function theme_enqueue_styles() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], VERSION );
@@ -20,3 +20,8 @@ function flush_rewrites($post_ID, $post, $update){
   flush_rewrite_rules();
 }
 add_action('save_post', 'flush_rewrites', 999, 3);
+
+/* NOTICES COMPONENT */
+include_once('includes/components/parksite.php');
+
+add_action( 'init', 'register_shortcodes');
