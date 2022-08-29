@@ -4,7 +4,7 @@ function get_notices() {
 
   global $post;
 
-  $table_html = '<table class="notice_table"><thead><tr><td><p>Notice Date</p></td><td><p>View/Download Notice</p></td></tr></thead><tbody>';
+  $table_html = '<table class="notice_table"><thead><tr><td class="notice_date_header"><p>Notice Date</p></td><td class="notice_dl_header"><p>View/Download Notice</p></td></tr></thead><tbody>';
   $notice_count = 0;
   
   if ( have_rows( 'smm_maintenance_notices' ) ) :
@@ -24,8 +24,8 @@ function get_notices() {
       $notice_date = $row['smm_notice_date'];
       $notice_file = $row['smm_upload_notice'];
 
-      $table_html .= '<tr '.$latest_class.'><td><p>'.$notice_date.'</p></td>';
-      $table_html .= '<td><p><a href="'.$notice_file.'">"'.get_the_title().'" Maintenance Notice '.$latest_txt;
+      $table_html .= '<tr '.$latest_class.'><td class="notice_date"><p>'.$notice_date.'</p></td>';
+      $table_html .= '<td class="notice_dl"><p><a href="'.$notice_file.'">"'.get_the_title().'" Maintenance Notice '.$latest_txt;
       $table_html .= '</a></p></td></tr>';
       
       $notice_count++;
