@@ -14,7 +14,7 @@ function get_notices() {
     foreach( $repeater as $i => $row ) {
       $date_order[ $i ] = $row['smm_notice_date'];
     }
-    array_multisort( $repeater, SORT_DESC, $date_order);
+    array_multisort( $date_order, SORT_DESC, SORT_NATURAL, $repeater );
 
     foreach( $repeater as $i => $row ):
 
