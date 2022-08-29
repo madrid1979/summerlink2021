@@ -25,6 +25,11 @@ add_action('save_post', 'flush_rewrites', 999, 3);
 include_once('includes/components/parksite.php');
 include_once('includes/components/options-content.php');
 
+function register_shortcodes(){
+  add_shortcode('show-notices', 'get_notices');
+  add_shortcode('show-boilerplate', 'pull_boilerplate');
+}
+
 add_action( 'init', 'register_shortcodes');
 
 /* ACF OPTIONS PAGE */

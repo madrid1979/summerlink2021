@@ -43,8 +43,4 @@ function get_notices() {
 
 }
 
-function register_shortcodes(){
-  add_shortcode('show-notices', 'get_notices');
-}
-
 ?>
