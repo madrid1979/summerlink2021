@@ -21,8 +21,9 @@ function flush_rewrites($post_ID, $post, $update){
 }
 add_action('save_post', 'flush_rewrites', 999, 3);
 
-/* NOTICES COMPONENT */
+/* ADDITIONAL COMPONENTS */
 include_once('includes/components/parksite.php');
+include_once('includes/components/options-content.php');
 
 add_action( 'init', 'register_shortcodes');
 
