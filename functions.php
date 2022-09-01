@@ -1,6 +1,6 @@
 <?php
 
-define('VERSION', '1.1.0');
+define('VERSION', '1.1.01a');
 
 function theme_enqueue_styles() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], VERSION );
