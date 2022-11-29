@@ -37,7 +37,7 @@ function get_notices() {
 
   else :
 
-	  $table_html .= '<tr><td colspan="2" class="no_notices"><p>There are no notices posted for this site.</p></td></tr>';
+	  $table_html .= '<tr><td colspan="3" class="no_notices"><p>There are no notices posted for this site.</p></td></tr>';
 
   endif;
   $table_html .= '</tbody></table>';
