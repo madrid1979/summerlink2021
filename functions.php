@@ -36,3 +36,12 @@ add_action( 'init', 'register_shortcodes');
 if( function_exists('acf_add_options_page') ) {
   acf_add_options_page();
 }
+
+/* Custom RSS Feeds */
+add_action('init', 'customRSS');
+function customRSS(){
+  add_feed('latest-notices', 'customRSSFunc');
+}
+function customRSSFunc(){
+  get_template_part('rss/rss', 'latestnotices');
+}
