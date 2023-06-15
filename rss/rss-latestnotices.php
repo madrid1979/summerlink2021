@@ -28,7 +28,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
     <description><?php bloginfo_rss('description') ?></description>
     
     <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
-    <language><?php echo get_option('rss_language'); ?></language>
+    <language>en-us</language>
   
     <sy:updatePeriod><?php echo apply_filters( 'rss_update_period', 'hourly' ); ?></sy:updatePeriod>
     <sy:updateFrequency><?php echo apply_filters( 'rss_update_frequency', '1' ); ?></sy:updateFrequency>
