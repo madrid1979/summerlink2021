@@ -45,11 +45,12 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
         $sitelink = get_the_permalink();
         $siteupdated_date = get_the_modified_time( 'F jS, Y' );
         $siteupdated_time = get_the_modified_time( 'h:i a' );
+        $postID = get_the_ID();
     ?>
       <item>
         <title><?php the_title_rss(); ?></title>
         <link><?php the_permalink_rss(); ?></link>
-        <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_datetime(get_the_ID(), 'modified', 'local' ), false); ?></pubDate>
+        <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_datetime($postID, 'modified', 'local' ), false); ?></pubDate>
         <dc:creator>The Summerlin Council</dc:creator>
         <guid isPermaLink="false"><?php the_guid(); ?></guid>
         <description>New maintenance notice posted - </description>
