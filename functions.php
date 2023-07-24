@@ -45,3 +45,23 @@ function customRSS(){
 function customRSSFunc(){
   get_template_part('rss/rss', 'latestnotices');
 }
+
+add_filter( 'get_post_time', 'return_post_date_rss_2_feed_func', 10, 3 ); 
+function return_post_date_rss_2_feed_func( $time, $d, $gmt ) {
+	if( did_action( 'rss2_head' ) ) {
+  	if(get_post_type() == 'site') { ?>
+			<item>
+        <title><?php the_title_rss(); ?></title>
+        <link><?php the_permalink_rss(); ?></link>
+        <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_modified_time('Y-m-d H:i:s', true), false); ?></pubDate>
+        <dc:creator>The Summerlin Council</dc:creator>
+        <guid isPermaLink="false"><?php the_guid(); ?></guid>
+        <description>New maintenance notice posted</description>
+        <?php rss_enclosure(); ?>
+        <?php do_action('rss2_item'); ?>
+      </item>
+		<?php 
+    }
+  }     
+  return $time;
+}
