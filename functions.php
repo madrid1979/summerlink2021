@@ -46,6 +46,7 @@ function customRSSFunc(){
   get_template_part('rss/rss', 'latestnotices');
 }
 
+/*
 add_filter( 'get_post_time', 'return_post_date_rss_2_feed_func', 10, 3 ); 
 function return_post_date_rss_2_feed_func( $time, $d, $gmt ) {
 	if( did_action( 'rss2_head' ) ) {
@@ -65,3 +66,4 @@ function return_post_date_rss_2_feed_func( $time, $d, $gmt ) {
   }     
   return $time;
 }
+*/
