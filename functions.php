@@ -46,6 +46,17 @@ function customRSSFunc(){
   get_template_part('rss/rss', 'latestnotices');
 }
 
+/* modify pubDate of RSS feed to display last updated. */
+add_filter( 'get_post_time', 'return_updated_date_rss_2_feed_func', 10, 3 ); 
+function return_updated_date_rss_2_feed_func( $time, $d, $gmt ) {
+  if( did_action( 'rss2_head' ) ) {
+     if(get_post_type() == 'site') {
+       $time = mysql2date('D, d M Y H:i:s +0000', get_post_modified_time('Y-m-d H:i:s', true), false);
+     }
+  }
+  return $time;
+}
+
 /*
 add_filter( 'get_post_time', 'return_post_date_rss_2_feed_func', 10, 3 ); 
 function return_post_date_rss_2_feed_func( $time, $d, $gmt ) {
